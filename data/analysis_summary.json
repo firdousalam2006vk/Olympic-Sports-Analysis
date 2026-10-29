@@ -1,0 +1,500 @@
+{
+  "kpis": {
+    "total_editions": 51,
+    "summer_editions": 29,
+    "winter_editions": 22,
+    "unique_athletes": 135571,
+    "total_event_participations": 271116,
+    "competing_nocs": 230,
+    "total_official_medals": 18905,
+    "total_gold": 6195,
+    "total_silver": 6163,
+    "total_bronze": 6547,
+    "years_covered_summer": "1896 - 2016",
+    "years_covered_winter": "1924 - 2014"
+  },
+  "top_15_countries": [
+    {
+      "noc": "USA",
+      "country": "USA",
+      "continent": "Americas",
+      "gold": 1131,
+      "silver": 901,
+      "bronze": 791,
+      "total_medals": 2823,
+      "weighted_score": 5986,
+      "athletes_entered": 12853,
+      "conversion_rate_pct": 21.96
+    },
+    {
+      "noc": "URS",
+      "country": "Russia",
+      "continent": "Europe",
+      "gold": 471,
+      "silver": 373,
+      "bronze": 353,
+      "total_medals": 1197,
+      "weighted_score": 2512,
+      "athletes_entered": 3938,
+      "conversion_rate_pct": 30.4
+    },
+    {
+      "noc": "GER",
+      "country": "Germany",
+      "continent": "Europe",
+      "gold": 319,
+      "silver": 345,
+      "bronze": 340,
+      "total_medals": 1004,
+      "weighted_score": 1987,
+      "athletes_entered": 6687,
+      "conversion_rate_pct": 15.01
+    },
+    {
+      "noc": "GBR",
+      "country": "UK",
+      "continent": "Europe",
+      "gold": 289,
+      "silver": 320,
+      "bronze": 310,
+      "total_medals": 919,
+      "weighted_score": 1817,
+      "athletes_entered": 8490,
+      "conversion_rate_pct": 10.82
+    },
+    {
+      "noc": "FRA",
+      "country": "France",
+      "continent": "Europe",
+      "gold": 264,
+      "silver": 286,
+      "bronze": 329,
+      "total_medals": 879,
+      "weighted_score": 1693,
+      "athletes_entered": 8280,
+      "conversion_rate_pct": 10.62
+    },
+    {
+      "noc": "ITA",
+      "country": "Italy",
+      "continent": "Europe",
+      "gold": 256,
+      "silver": 225,
+      "bronze": 241,
+      "total_medals": 722,
+      "weighted_score": 1459,
+      "athletes_entered": 7226,
+      "conversion_rate_pct": 9.99
+    },
+    {
+      "noc": "CHN",
+      "country": "China",
+      "continent": "Asia",
+      "gold": 239,
+      "silver": 184,
+      "bronze": 172,
+      "total_medals": 595,
+      "weighted_score": 1257,
+      "athletes_entered": 3607,
+      "conversion_rate_pct": 16.5
+    },
+    {
+      "noc": "RUS",
+      "country": "Russia",
+      "continent": "Europe",
+      "gold": 202,
+      "silver": 183,
+      "bronze": 199,
+      "total_medals": 584,
+      "weighted_score": 1171,
+      "athletes_entered": 3558,
+      "conversion_rate_pct": 16.41
+    },
+    {
+      "noc": "SWE",
+      "country": "Sweden",
+      "continent": "Europe",
+      "gold": 200,
+      "silver": 215,
+      "bronze": 242,
+      "total_medals": 657,
+      "weighted_score": 1272,
+      "athletes_entered": 5417,
+      "conversion_rate_pct": 12.13
+    },
+    {
+      "noc": "GDR",
+      "country": "Germany",
+      "continent": "Europe",
+      "gold": 192,
+      "silver": 165,
+      "bronze": 162,
+      "total_medals": 519,
+      "weighted_score": 1068,
+      "athletes_entered": 1715,
+      "conversion_rate_pct": 30.26
+    },
+    {
+      "noc": "HUN",
+      "country": "Hungary",
+      "continent": "Europe",
+      "gold": 178,
+      "silver": 156,
+      "bronze": 176,
+      "total_medals": 510,
+      "weighted_score": 1022,
+      "athletes_entered": 4113,
+      "conversion_rate_pct": 12.4
+    },
+    {
+      "noc": "NOR",
+      "country": "Norway",
+      "continent": "Europe",
+      "gold": 167,
+      "silver": 159,
+      "bronze": 148,
+      "total_medals": 474,
+      "weighted_score": 967,
+      "athletes_entered": 3174,
+      "conversion_rate_pct": 14.93
+    },
+    {
+      "noc": "AUS",
+      "country": "Australia",
+      "continent": "Oceania",
+      "gold": 153,
+      "silver": 170,
+      "bronze": 196,
+      "total_medals": 519,
+      "weighted_score": 995,
+      "athletes_entered": 5479,
+      "conversion_rate_pct": 9.47
+    },
+    {
+      "noc": "JPN",
+      "country": "Japan",
+      "continent": "Asia",
+      "gold": 152,
+      "silver": 151,
+      "bronze": 179,
+      "total_medals": 482,
+      "weighted_score": 937,
+      "athletes_entered": 5458,
+      "conversion_rate_pct": 8.83
+    },
+    {
+      "noc": "FIN",
+      "country": "Finland",
+      "continent": "Europe",
+      "gold": 146,
+      "silver": 148,
+      "bronze": 177,
+      "total_medals": 471,
+      "weighted_score": 911,
+      "athletes_entered": 3413,
+      "conversion_rate_pct": 13.8
+    }
+  ],
+  "gender_evolution_sample": [
+    {
+      "year": 1988,
+      "season": "Summer",
+      "female": 2203,
+      "male": 6251,
+      "total": 8454,
+      "female_pct": 26.06
+    },
+    {
+      "year": 1992,
+      "season": "Summer",
+      "female": 2723,
+      "male": 6663,
+      "total": 9386,
+      "female_pct": 29.01
+    },
+    {
+      "year": 1996,
+      "season": "Summer",
+      "female": 3517,
+      "male": 6822,
+      "total": 10339,
+      "female_pct": 34.02
+    },
+    {
+      "year": 2000,
+      "season": "Summer",
+      "female": 4068,
+      "male": 6579,
+      "total": 10647,
+      "female_pct": 38.21
+    },
+    {
+      "year": 2004,
+      "season": "Summer",
+      "female": 4300,
+      "male": 6257,
+      "total": 10557,
+      "female_pct": 40.73
+    },
+    {
+      "year": 2008,
+      "season": "Summer",
+      "female": 4609,
+      "male": 6290,
+      "total": 10899,
+      "female_pct": 42.29
+    },
+    {
+      "year": 2012,
+      "season": "Summer",
+      "female": 4654,
+      "male": 5863,
+      "total": 10517,
+      "female_pct": 44.25
+    },
+    {
+      "year": 2016,
+      "season": "Summer",
+      "female": 5034,
+      "male": 6145,
+      "total": 11179,
+      "female_pct": 45.03
+    }
+  ],
+  "top_sports_dominance": [
+    {
+      "sport": "Athletics",
+      "total_medals": 3003,
+      "dominant_country": "USA",
+      "dominant_country_medals": 816,
+      "dominance_share_pct": 27.2
+    },
+    {
+      "sport": "Swimming",
+      "total_medals": 1685,
+      "dominant_country": "USA",
+      "dominant_country_medals": 550,
+      "dominance_share_pct": 32.6
+    },
+    {
+      "sport": "Wrestling",
+      "total_medals": 1296,
+      "dominant_country": "Russia",
+      "dominant_country_medals": 192,
+      "dominance_share_pct": 14.8
+    },
+    {
+      "sport": "Gymnastics",
+      "total_medals": 974,
+      "dominant_country": "Russia",
+      "dominant_country_medals": 241,
+      "dominance_share_pct": 24.7
+    },
+    {
+      "sport": "Boxing",
+      "total_medals": 944,
+      "dominant_country": "USA",
+      "dominant_country_medals": 113,
+      "dominance_share_pct": 12.0
+    },
+    {
+      "sport": "Shooting",
+      "total_medals": 853,
+      "dominant_country": "USA",
+      "dominant_country_medals": 110,
+      "dominance_share_pct": 12.9
+    },
+    {
+      "sport": "Rowing",
+      "total_medals": 783,
+      "dominant_country": "Germany",
+      "dominant_country_medals": 121,
+      "dominance_share_pct": 15.5
+    },
+    {
+      "sport": "Cycling",
+      "total_medals": 740,
+      "dominant_country": "France",
+      "dominant_country_medals": 98,
+      "dominance_share_pct": 13.2
+    },
+    {
+      "sport": "Canoeing",
+      "total_medals": 679,
+      "dominant_country": "Germany",
+      "dominant_country_medals": 122,
+      "dominance_share_pct": 18.0
+    },
+    {
+      "sport": "Fencing",
+      "total_medals": 655,
+      "dominant_country": "Italy",
+      "dominant_country_medals": 127,
+      "dominance_share_pct": 19.4
+    }
+  ],
+  "host_advantage": {
+    "success_rate_pct": 86.7,
+    "mean_bump": 15.4,
+    "median_bump": 11.0,
+    "cases": [
+      {
+        "host_year": 1952,
+        "country": "Finland",
+        "pre_medals": 22,
+        "host_medals": 22,
+        "medal_bump": 0,
+        "bump_pct": 0.0
+      },
+      {
+        "host_year": 1956,
+        "country": "Australia",
+        "pre_medals": 11,
+        "host_medals": 35,
+        "medal_bump": 24,
+        "bump_pct": 218.2
+      },
+      {
+        "host_year": 1960,
+        "country": "Italy",
+        "pre_medals": 25,
+        "host_medals": 36,
+        "medal_bump": 11,
+        "bump_pct": 44.0
+      },
+      {
+        "host_year": 1964,
+        "country": "Japan",
+        "pre_medals": 18,
+        "host_medals": 29,
+        "medal_bump": 11,
+        "bump_pct": 61.1
+      },
+      {
+        "host_year": 1968,
+        "country": "Mexico",
+        "pre_medals": 1,
+        "host_medals": 9,
+        "medal_bump": 8,
+        "bump_pct": 800.0
+      },
+      {
+        "host_year": 1976,
+        "country": "Canada",
+        "pre_medals": 5,
+        "host_medals": 11,
+        "medal_bump": 6,
+        "bump_pct": 120.0
+      },
+      {
+        "host_year": 1980,
+        "country": "Soviet Union",
+        "pre_medals": 125,
+        "host_medals": 195,
+        "medal_bump": 70,
+        "bump_pct": 56.0
+      },
+      {
+        "host_year": 1988,
+        "country": "South Korea",
+        "pre_medals": 19,
+        "host_medals": 33,
+        "medal_bump": 14,
+        "bump_pct": 73.7
+      },
+      {
+        "host_year": 1992,
+        "country": "Spain",
+        "pre_medals": 4,
+        "host_medals": 22,
+        "medal_bump": 18,
+        "bump_pct": 450.0
+      },
+      {
+        "host_year": 1996,
+        "country": "United States",
+        "pre_medals": 108,
+        "host_medals": 101,
+        "medal_bump": -7,
+        "bump_pct": -6.5
+      },
+      {
+        "host_year": 2000,
+        "country": "Australia",
+        "pre_medals": 41,
+        "host_medals": 58,
+        "medal_bump": 17,
+        "bump_pct": 41.5
+      },
+      {
+        "host_year": 2004,
+        "country": "Greece",
+        "pre_medals": 13,
+        "host_medals": 16,
+        "medal_bump": 3,
+        "bump_pct": 23.1
+      },
+      {
+        "host_year": 2008,
+        "country": "China",
+        "pre_medals": 63,
+        "host_medals": 100,
+        "medal_bump": 37,
+        "bump_pct": 58.7
+      },
+      {
+        "host_year": 2012,
+        "country": "Great Britain",
+        "pre_medals": 48,
+        "host_medals": 65,
+        "medal_bump": 17,
+        "bump_pct": 35.4
+      },
+      {
+        "host_year": 2016,
+        "country": "Brazil",
+        "pre_medals": 17,
+        "host_medals": 19,
+        "medal_bump": 2,
+        "bump_pct": 11.8
+      }
+    ]
+  },
+  "regional_efficiency": [
+    {
+      "continent": "Americas",
+      "total_athletes": 36317,
+      "gold": 1448,
+      "total_medals": 3980,
+      "conversion_rate_pct": 10.96
+    },
+    {
+      "continent": "Europe",
+      "total_athletes": 109534,
+      "gold": 3809,
+      "total_medals": 11983,
+      "conversion_rate_pct": 10.94
+    },
+    {
+      "continent": "Asia",
+      "total_athletes": 22712,
+      "gold": 614,
+      "total_medals": 1846,
+      "conversion_rate_pct": 8.13
+    },
+    {
+      "continent": "Oceania",
+      "total_athletes": 8042,
+      "gold": 204,
+      "total_medals": 652,
+      "conversion_rate_pct": 8.11
+    },
+    {
+      "continent": "Africa",
+      "total_athletes": 9798,
+      "gold": 112,
+      "total_medals": 392,
+      "conversion_rate_pct": 4.0
+    }
+  ]
+}

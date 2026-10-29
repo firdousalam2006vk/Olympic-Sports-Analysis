@@ -1,0 +1,254 @@
+"""
+Script 06: Generate Native Tableau Public Workbook (.twb)
+=========================================================
+Project: Global Olympic Sports Performance Analysis
+Author: Senior Tableau Developer
+Description: Generates a fully formatted, native Tableau Public workbook XML (.twb)
+             with embedded connections to medal_results.csv, custom calculated
+             fields, views, and dashboards.
+"""
+
+import os
+import xml.etree.ElementTree as ET
+
+TABLEAU_DIR = os.path.join("tableau")
+os.makedirs(TABLEAU_DIR, exist_ok=True)
+TWB_PATH = os.path.join(TABLEAU_DIR, "Olympic_Performance_Analysis.twb")
+
+# Relative path to processed data
+CSV_REL_PATH = os.path.join("..", "data", "processed", "medal_results.csv").replace("\\", "/")
+ABSOLUTE_CSV_PATH = os.path.abspath(os.path.join("data", "processed", "medal_results.csv")).replace("\\", "/")
+
+TWB_CONTENT = f"""<?xml version='1.0' encoding='utf-8' ?>
+<workbook source-build='2024.1.0' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='medal_results' inline='true' name='federated.olympic_medals' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='medal_results' name='textscan.olympic_medals_conn'>
+            <connection class='textscan' directory='../data/processed' filename='medal_results.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.olympic_medals_conn' name='medal_results.csv' table='[medal_results#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='games_id' ordinal='0' />
+            <column datatype='integer' name='year' ordinal='1' />
+            <column datatype='string' name='season' ordinal='2' />
+            <column datatype='string' name='city' ordinal='3' />
+            <column datatype='string' name='noc' ordinal='4' />
+            <column datatype='string' name='country' ordinal='5' />
+            <column datatype='string' name='continent' ordinal='6' />
+            <column datatype='integer' name='is_host' ordinal='7' />
+            <column datatype='integer' name='athletes_count' ordinal='8' />
+            <column datatype='integer' name='events_entered' ordinal='9' />
+            <column datatype='integer' name='sports_entered' ordinal='10' />
+            <column datatype='integer' name='gold' ordinal='11' />
+            <column datatype='integer' name='silver' ordinal='12' />
+            <column datatype='integer' name='bronze' ordinal='13' />
+            <column datatype='integer' name='total_medals' ordinal='14' />
+            <column datatype='integer' name='weighted_score' ordinal='15' />
+            <column datatype='real' name='medals_per_100_athletes' ordinal='16' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>games_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[games_id]</local-name>
+            <parent-name>[medal_results.csv]</parent-name>
+            <remote-alias>games_id</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[medal_results.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[medal_results.csv]</parent-name>
+            <remote-alias>country</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_medals</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_medals]</local-name>
+            <parent-name>[medal_results.csv]</parent-name>
+            <remote-alias>total_medals</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gold</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gold]</local-name>
+            <parent-name>[medal_results.csv]</parent-name>
+            <remote-alias>gold</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Weighted Score' datatype='integer' name='[CF_Weighted_Medal_Score]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='([gold] * 3) + ([silver] * 2) + ([bronze] * 1)' />
+      </column>
+      <column caption='Medal Conversion Rate (%)' datatype='real' default-format='p0.0%' name='[CF_Medal_Conversion_Rate]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF SUM([athletes_count]) &gt; 0 THEN (SUM([total_medals]) / SUM([athletes_count])) ELSE 0 END' />
+      </column>
+      <column caption='Host Status' datatype='string' name='[CF_Host_Status_Label]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [is_host] = 1 THEN &quot;Host Nation&quot; ELSE &quot;Visiting Nation&quot; END' />
+      </column>
+      <column datatype='string' name='[country]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column datatype='string' name='[season]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[year]' role='dimension' type='ordinal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.5' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='W1_Country_Medals'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='medal_results' name='federated.olympic_medals' />
+          </datasources>
+          <datasource-dependencies datasource='federated.olympic_medals'>
+            <column datatype='string' name='[country]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column datatype='integer' name='[total_medals]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[gold]' role='measure' type='quantitative' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[total_medals]' derivation='Sum' name='[sum:total_medals:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.olympic_medals].[none:country:nk]</rows>
+        <cols>[federated.olympic_medals].[sum:total_medals:qk]</cols>
+      </table>
+      <simple-id uuid='worksheet-w1-country-medals' />
+    </worksheet>
+    <worksheet name='W1_Year_Trend'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='medal_results' name='federated.olympic_medals' />
+          </datasources>
+          <datasource-dependencies datasource='federated.olympic_medals'>
+            <column datatype='integer' name='[year]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[athletes_count]' role='measure' type='quantitative' />
+            <column-instance column='[year]' derivation='None' name='[none:year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[athletes_count]' derivation='Sum' name='[sum:athletes_count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+          </pane>
+        </panes>
+        <rows>[federated.olympic_medals].[sum:athletes_count:qk]</rows>
+        <cols>[federated.olympic_medals].[none:year:ok]</cols>
+      </table>
+      <simple-id uuid='worksheet-w1-year-trend' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Global Olympic Performance'>
+      <style />
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='1' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='7' param='vert' type-v2='layout-flow' w='100000' x='0' y='0'>
+            <zone h='8000' id='8' type-v2='text' w='100000' x='0' y='0'>
+              <formatted-text>
+                <run bold='true' fontcolor='#1b365d' fontsize='16'>Global Olympic Performance Analysis | Skills Wallet Edition</run>
+              </formatted-text>
+            </zone>
+            <zone h='92000' id='9' param='horz' type-v2='layout-flow' w='100000' x='0' y='8000'>
+              <zone h='92000' id='1' name='W1_Country_Medals' w='55000' x='0' y='8000' />
+              <zone h='92000' id='2' name='W1_Year_Trend' w='45000' x='55000' y='8000' />
+            </zone>
+          </zone>
+        </zone>
+      </zones>
+      <simple-id uuid='dashboard-global-performance' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='35'>
+    <window class='worksheet' name='W1_Country_Medals'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='window-w1-country-medals' />
+    </window>
+    <window class='dashboard' maximized='true' name='Global Olympic Performance'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='window-dashboard-global' />
+    </window>
+  </windows>
+</workbook>
+"""
+
+def generate_twb():
+    print(f"Writing native Tableau workbook to {TWB_PATH}...")
+    with open(TWB_PATH, "w", encoding="utf-8") as f:
+        f.write(TWB_CONTENT.strip())
+    print(f"[SUCCESS] Native Tableau workbook successfully generated ({os.path.getsize(TWB_PATH):,} bytes).")
+
+if __name__ == "__main__":
+    generate_twb()
+
