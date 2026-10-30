@@ -1,0 +1,37 @@
+sport,cycle,games_year,funding_millions_gbp,medals_won,target_met,cost_per_medal_millions_gbp,data_source
+Rowing,Rio 2016,2016,32.62,5,Yes,6.52,UK Sport Official Published High Performance Grants
+Cycling,Rio 2016,2016,30.27,12,Yes,2.52,UK Sport Official Published High Performance Grants
+Athletics,Rio 2016,2016,26.82,7,Yes,3.83,UK Sport Official Published High Performance Grants
+Sailing,Rio 2016,2016,25.5,3,Yes,8.5,UK Sport Official Published High Performance Grants
+Swimming,Rio 2016,2016,20.79,6,Yes,3.46,UK Sport Official Published High Performance Grants
+Canoeing,Rio 2016,2016,20.04,4,Yes,5.01,UK Sport Official Published High Performance Grants
+Equestrian,Rio 2016,2016,17.99,3,Yes,6.0,UK Sport Official Published High Performance Grants
+Gymnastics,Rio 2016,2016,14.61,7,Yes,2.09,UK Sport Official Published High Performance Grants
+Boxing,Rio 2016,2016,13.76,3,Yes,4.59,UK Sport Official Published High Performance Grants
+Hockey,Rio 2016,2016,16.11,1,Yes,16.11,UK Sport Official Published High Performance Grants
+Taekwondo,Rio 2016,2016,8.05,3,Yes,2.68,UK Sport Official Published High Performance Grants
+Diving,Rio 2016,2016,7.47,3,Yes,2.49,UK Sport Official Published High Performance Grants
+Judo,Rio 2016,2016,7.37,1,Yes,7.37,UK Sport Official Published High Performance Grants
+Triathlon,Rio 2016,2016,5.5,3,Yes,1.83,UK Sport Official Published High Performance Grants
+Shooting,Rio 2016,2016,3.95,2,Yes,1.98,UK Sport Official Published High Performance Grants
+Badminton,Rio 2016,2016,5.74,1,Yes,5.74,UK Sport Official Published High Performance Grants
+Modern Pentathlon,Rio 2016,2016,6.97,0,No,,UK Sport Official Published High Performance Grants
+Fencing,Rio 2016,2016,4.23,0,No,,UK Sport Official Published High Performance Grants
+Archery,Rio 2016,2016,2.95,0,No,,UK Sport Official Published High Performance Grants
+Weightlifting,Rio 2016,2016,1.71,0,No,,UK Sport Official Published High Performance Grants
+Rowing,London 2012,2012,27.29,9,Yes,3.03,UK Sport Official Published High Performance Grants
+Cycling,London 2012,2012,26.03,12,Yes,2.17,UK Sport Official Published High Performance Grants
+Athletics,London 2012,2012,25.15,6,Yes,4.19,UK Sport Official Published High Performance Grants
+Swimming,London 2012,2012,25.14,3,No,8.38,UK Sport Official Published High Performance Grants
+Sailing,London 2012,2012,22.94,5,Yes,4.59,UK Sport Official Published High Performance Grants
+Canoeing,London 2012,2012,16.32,4,Yes,4.08,UK Sport Official Published High Performance Grants
+Hockey,London 2012,2012,15.01,1,Yes,15.01,UK Sport Official Published High Performance Grants
+Equestrian,London 2012,2012,13.39,5,Yes,2.68,UK Sport Official Published High Performance Grants
+Gymnastics,London 2012,2012,10.77,4,Yes,2.69,UK Sport Official Published High Performance Grants
+Boxing,London 2012,2012,9.5,5,Yes,1.9,UK Sport Official Published High Performance Grants
+Diving,London 2012,2012,7.73,1,Yes,7.73,UK Sport Official Published High Performance Grants
+Judo,London 2012,2012,7.49,2,Yes,3.74,UK Sport Official Published High Performance Grants
+Modern Pentathlon,London 2012,2012,6.29,1,Yes,6.29,UK Sport Official Published High Performance Grants
+Triathlon,London 2012,2012,5.29,2,Yes,2.64,UK Sport Official Published High Performance Grants
+Taekwondo,London 2012,2012,4.83,2,Yes,2.42,UK Sport Official Published High Performance Grants
+Shooting,London 2012,2012,2.46,1,Yes,2.46,UK Sport Official Published High Performance Grants
