@@ -1,0 +1,8 @@
+continent,total_editions,participating_nocs,total_athlete_participations,total_gold,total_silver,total_bronze,total_medals,total_weighted_score,medals_per_100_athletes,gold_share_pct
+Africa,38,52,9798,112,130,150,392,746,4.0,28.57
+Americas,51,41,36317,1448,1283,1249,3980,8159,10.96,36.38
+Asia,47,44,22712,614,579,653,1846,3653,8.13,33.26
+Europe,51,56,109534,3809,3953,4221,11983,23554,10.94,31.79
+Oceania,48,18,8042,204,203,245,652,1263,8.11,31.29
+Other,28,15,948,7,14,24,45,73,4.75,15.56
+Special,7,4,101,1,1,5,7,10,6.93,14.29
